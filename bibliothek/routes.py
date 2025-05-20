@@ -1,0 +1,161 @@
+from bibliothek import app, db
+from flask import render_template 
+from flask import request, redirect, url_for
+from sqlalchemy import text
+import re
+import json
+
+@app.route('/')
+def home_page():
+    return render_template('home.html', isLoggedIn=isLoggedIn())
+
+@app.route('/login', methods=['GET', 'POST'])
+def login_page():
+    if request.method == 'POST':
+        print("post")
+    
+        username = request.form.get('Username')
+        password = request.form.get('Password')
+
+        print(username, password)
+        
+        query_stmt = f"SELECT username from testusers where username = '{username}' and password = '{password}'"
+        print(query_stmt)
+        result = db.session.execute(text(query_stmt))
+        user = result.fetchall()
+        username = re.sub(r"[\[\]\(\),']*", "", str(user))
+        print(user)
+
+        if not user:
+            print("user not found")
+            return render_template('login.html', isLoggedIn=isLoggedIn())
+        else:
+            print("user found")
+            resp = redirect('/books')
+            resp.set_cookie('username', username)
+            return resp
+
+        return render_template('login.html', isLoggedIn=isLoggedIn())
+    
+    return render_template('login.html', isLoggedIn=isLoggedIn())
+
+@app.route('/register', methods=['GET', 'POST'])
+def register_page():
+    if request.method == 'POST':
+        print("post")
+    
+        username = request.form.get('Username')
+        email = request.form.get('Email')
+        password1 = request.form.get('Password1')
+        password2 = request.form.get('Password2')
+
+        print(username, email, password1, password2)
+
+        if password1 != password2:
+            print("passwords do not match")
+            return render_template('register.html', isLoggedIn=isLoggedIn())
+        
+        query_stmt = f"insert into testusers (username, email_address, password) values ('{username}', '{email}', '{password1}')"
+        db.session.execute(text(query_stmt))
+        db.session.commit()
+        print("user created")
+
+        query_stmt = f"SELECT username from testusers where username = '{username}' and password = '{password1}'"
+        result = db.session.execute(text(query_stmt))
+        user = result.fetchall()
+
+        if not user:
+            print("user not created")
+            return render_template('register.html', isLoggedIn=isLoggedIn())
+        else:
+            print("user found")
+            resp = redirect('/books')
+            resp.set_cookie('username', username)
+            return resp
+
+
+        return render_template('register.html', isLoggedIn=isLoggedIn())
+    
+    return render_template('register.html', isLoggedIn=isLoggedIn())
+
+@app.route('/books')
+def books_page():
+    if not request.cookies.get('username'):
+        return redirect(url_for('login_page'))
+
+    query_stmt = f"SELECT * from books"
+    result = db.session.execute(text(query_stmt))
+    items = result.fetchall()
+    name = request.cookies.get('username')
+
+    print(items)
+
+    return render_template('books.html', items=items, name=name, isLoggedIn=isLoggedIn())
+
+@app.route('/addBook', methods=['GET', 'POST'])
+def addBook_page():
+    if not request.cookies.get('username'):
+        return redirect(url_for('login_page'))
+
+    if request.method == 'POST':
+        print("post")
+
+        title = request.form.get('Title')
+        isbn = request.form.get('ISBN')
+        description = request.form.get('Description')
+        author = request.form.get('Author') 
+        date = request.form.get('ReleaseDate')
+
+        print(f"{title}, {isbn}, {description}, {author}, {date}")
+        
+        query_stmt = f"insert into books (title, isbn, description, author, releaseDate) values ('{title}', '{isbn}', '{description}', '{author}', '{date}')"
+        db.session.execute(text(query_stmt))
+        db.session.commit()
+        print("book created")
+
+        resp = redirect('/books')
+        return resp
+
+    return render_template('addBook.html', isLoggedIn=isLoggedIn())
+
+
+@app.route('/bookDetails')
+def bookDetails_page():
+    if not request.cookies.get('username'):
+        return redirect(url_for('login_page'))
+
+    book_id = request.args.get('id')
+    query_stmt = f"SELECT * from books where bookID = {book_id}"
+    result = db.session.execute(text(query_stmt))
+    item = result.fetchall()
+
+    print(item)
+
+    return render_template('bookDetails.html', item=item[0], isLoggedIn=isLoggedIn())
+
+
+@app.route('/logout')
+def logout():
+    resp = redirect('/')
+    resp.set_cookie('username', '', expires=0)
+    return resp
+
+@app.route('/stealing', methods=['POST'])
+def stealing():
+    if request.method == 'POST':
+        print("post")
+        
+        jsonData = json.loads(request.data)
+        print(jsonData["cookie"])
+        
+
+    
+
+    resp = redirect('/books')
+    return resp
+
+def isLoggedIn():
+    if request.cookies.get('username'):
+        return True
+    else:
+        return False

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}
+    This is my Login Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-register" action="/login">
+            <label for="Username" class="form-label">Username</label>
+            <input type="text" id="Username" name="Username" class="form-control" >
+            <label for="Password" class="form-label">Password</label>
+            <input type="password" id="Password" name="Password" class="form-control" >
+            <br>
+            <button type="submit" class="btn btn-dark">Login</button>
+        </form>
+    </div>
+</body>
+{% endblock %}

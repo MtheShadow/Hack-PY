@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+    This is my add Book Page
+{% endblock %}
+
+{% block content %}
+
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-register" action="/addBook">
+            <label for="Title" class="form-label">Titel</label>
+            <input type="text" id="Title" name="Title" class="form-control">
+            <label for="ISBN" class="form-label">ISBN</label>
+            <input type="text" id="ISBN" name="ISBN" class="form-control">
+            <label for="Description" class="form-label">Description</label>
+            <textarea type="text" id="Description" name="Description" class="form-control" rows="3"></textarea>
+            <label for="ReleaseDate" class="form-label">Release Date</label>
+            <input type="date" id="ReleaseDate" name="ReleaseDate" class="form-control">
+            <label for="Author" class="form-label">Author</label>
+            <input type="text" id="Author" name="Author" class="form-control">
+            <br>
+            <button type="submit" class="btn btn-dark">Add Book</button>
+        </form>
+    </div>
+</body>
+
+{% endblock %}
