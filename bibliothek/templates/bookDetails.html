@@ -5,7 +5,7 @@ These are my Books
 
 {% block content %}
 <div class="text-center w-50 mx-auto">
-    {% autoescape false %}
+    {% autoescape true %}
     <h1>{{ item.title }}</h1>
     <p><b>Author:</b> {{ item.author }}</p>
     <p><b>Release Date:</b> {{ item.releaseDate }}</p>
