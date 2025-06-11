@@ -1,6 +1,6 @@
 from bibliothek import app, db
 from flask import render_template 
-from flask import request, redirect, url_for
+from flask import request, redirect, url_for, session
 from sqlalchemy import text
 import re
 import json
@@ -32,7 +32,8 @@ def login_page():
         else:
             print("user found")
             resp = redirect('/books')
-            resp.set_cookie('username', username)
+            #resp.set_cookie('username', username)
+            session['username'] = username
             return resp
 
         return render_template('login.html', isLoggedIn=isLoggedIn())
@@ -80,21 +81,21 @@ def register_page():
 
 @app.route('/books')
 def books_page():
-    if not request.cookies.get('username'):
+    if not session.get('username'):
         return redirect(url_for('login_page'))
 
     query_stmt = f"SELECT * from books"
     result = db.session.execute(text(query_stmt))
     items = result.fetchall()
-    name = request.cookies.get('username')
+    #name = session['username'] #request.cookies.get('username')
 
     print(items)
 
-    return render_template('books.html', items=items, name=name, isLoggedIn=isLoggedIn())
+    return render_template('books.html', items=items, isLoggedIn=isLoggedIn())
 
 @app.route('/addBook', methods=['GET', 'POST'])
 def addBook_page():
-    if not request.cookies.get('username'):
+    if not session.get('username'):
         return redirect(url_for('login_page'))
 
     if request.method == 'POST':
@@ -121,7 +122,7 @@ def addBook_page():
 
 @app.route('/bookDetails')
 def bookDetails_page():
-    if not request.cookies.get('username'):
+    if not session.get('username'):
         return redirect(url_for('login_page'))
 
     book_id = request.args.get('id')
@@ -138,6 +139,7 @@ def bookDetails_page():
 def logout():
     resp = redirect('/')
     resp.set_cookie('username', '', expires=0)
+    session.pop('username', None)
     return resp
 
 @app.route('/stealing', methods=['POST'])
@@ -155,7 +157,7 @@ def stealing():
     return resp
 
 def isLoggedIn():
-    if request.cookies.get('username'):
+    if session.get('username'):
         return True
     else:
         return False
