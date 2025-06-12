@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+    This is my 2FA Page
+{% endblock %}
+
+{% block content %}
+
+<body class="text-center">
+    <div class="container">
+        <h1>2 Factor Authentication</h1>
+        <p>Bitte gebe sie hier den Code von der gesendetend Mail ein.</p>
+        <form method="POST" class="form-register" action="/2FA">
+            <label for="twoFactor" class="form-label">2FA-Code</label>
+            <input type="text" id="twoFactor" name="twoFactor" class="form-control">
+            <br>
+            <button type="submit" class="btn btn-dark">Confirm</button>
+        </form>
+    </div>
+</body>
+
+{% endblock %}
