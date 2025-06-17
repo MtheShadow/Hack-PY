@@ -20,3 +20,4 @@ whatever
 password1
 password
 your_secret_key_here
+THISISMYLIBRARYSECRET
