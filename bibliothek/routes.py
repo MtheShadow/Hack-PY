@@ -2,6 +2,7 @@ from bibliothek import app, db, mail, limiter
 from flask import render_template 
 from flask import request, redirect, url_for, session
 from flask_mail import Message
+from flask import send_file
 from sqlalchemy import text
 import re
 import json
@@ -199,13 +200,16 @@ def stealing():
         print("post")
         
         jsonData = json.loads(request.data)
-        print(jsonData["cookie"])
-        
-
-    
+        print(jsonData["cookie"]) 
 
     resp = redirect('/books')
     return resp
+
+@app.route('/download')
+def download():
+    path = request.args.get("path")
+    print(path)
+    return send_file(path, as_attachment=True)
 
 def isLoggedIn():
     if session.get('username'):
